@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import java.util.Collection;
 
 @Getter
-public class AccountContext extends User {
+public class AccountContext extends User  {
 
     private Account account;
 

@@ -22,8 +22,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 @Slf4j
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     private final AuthenticationProvider authenticationProvider;
-    private final UserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

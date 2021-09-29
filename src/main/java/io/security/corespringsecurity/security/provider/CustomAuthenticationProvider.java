@@ -15,15 +15,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Component
+@Component("authenticationProvider")
 @RequiredArgsConstructor
-public class CustomAuthenticationProvider implements AuthenticationProvider {
+public class CustomAuthenticationProvider implements AuthenticationProvider{
 
-    private final UserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
+    private final UserDetailsService userDetailsService;
 
-    //검증
-    //authentication -> 매니저한태 받음
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
@@ -42,7 +40,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         return usernamePasswordAuthenticationToken;
     }
 
-    //이클래스가 사용하고자 하는 토큰과 일치할때 검증
     @Override
     public boolean supports(Class<?> authentication) {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
