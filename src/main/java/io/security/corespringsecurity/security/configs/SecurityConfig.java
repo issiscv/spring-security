@@ -17,6 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 @Configuration
@@ -25,7 +26,10 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //custom AuthenticationProvider, custom AuthenticationSuccessHandler, 커스텀 로그인 페이지,
+
     private final AuthenticationProvider authenticationProvider;
+    private final AuthenticationSuccessHandler authenticationSuccessHandler;
     private final AuthenticationDetailsSource authenticationDetailsSource;
 
     @Override
@@ -55,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/login_proc")
                 .authenticationDetailsSource(authenticationDetailsSource)
                 .defaultSuccessUrl("/")
+                .successHandler(authenticationSuccessHandler)
                 .permitAll()
         ;
     }
