@@ -44,7 +44,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
         }
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-                new UsernamePasswordAuthenticationToken(accountContext.getUsername(), null, accountContext.getAuthorities());
+                new UsernamePasswordAuthenticationToken(accountContext.getAccount(), null, accountContext.getAuthorities());
 
         return usernamePasswordAuthenticationToken;
     }
