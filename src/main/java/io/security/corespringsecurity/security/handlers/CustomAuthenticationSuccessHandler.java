@@ -1,5 +1,6 @@
 package io.security.corespringsecurity.security.handlers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
@@ -18,8 +19,8 @@ import java.io.IOException;
 //스프링이 구현 해놓은 인증 성공 핸들러
 @Component("authenticationSuccessHandler")
 public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
-    
-    //마지막 요청 정보
+
+        //마지막 요청 정보
     private RequestCache requestCache = new HttpSessionRequestCache();
     //redirect 줌
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
