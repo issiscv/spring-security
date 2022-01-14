@@ -47,7 +47,7 @@ springSecurityFilterChain 이름으로 생성된 빈을 ApplicationContext에서
 ### SecurityContext
 - Authentication 객체가 저장되는 보관소로 필요 시 언제든지 Authentication 객체를 꺼내어 쓸 수 있도록 제고되는 클래스
 - ThreadLocal 에 저장되어 아무 곳에서나 참조가 가능
-- 인증이 완료되면 HttpSession 에 저장되어 ㅇ어플리케이션 전반에 걸쳐 전역적인 참조가 가능하다.
+- 인증이 완료되면 HttpSession 에 저장되어 어플리케이션 전반에 걸쳐 전역적인 참조가 가능하다.
 ### 인증 시 저장되는 객체의 이해
 - SecurityContextHolder - SecurityContext - Authentication - User
 - 위의 순서대로 앞의 객체가 뒤의 객체를 보관한다.
